@@ -1,4 +1,5 @@
 using ContactList.Data.Data.Context;
+using ContactList.Data.Data.Intitializer;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,3 +28,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+AppInitializer.Seed(app);
+
