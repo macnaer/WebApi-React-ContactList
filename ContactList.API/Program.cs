@@ -1,3 +1,4 @@
+using ContactList.Data.Data.Classes;
 using ContactList.Data.Data.Context;
 using ContactList.Data.Data.Intitializer;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,9 @@ builder.Services.AddSwaggerGen();
 
 // Add AppDbContext
 builder.Services.AddDbContext<AppDbContext>();
+
+// Connect Interfecees to classes
+builder.Services.AddTransient<IContactListRepository, ContactListRepository>();
 
 var app = builder.Build();
 
